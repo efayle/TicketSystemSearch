@@ -23,7 +23,7 @@ namespace TicketSystemSearch
 
             string userChoice;
             do {
-                Console.WriteLine("1.) Display all tickets\n2.) Create a ticket\n3.) Exit\n");
+                Console.WriteLine("1.) Display all tickets\n2.) Create a ticket\n3.) Search tickets\n4.) Exit");
                 userChoice = Console.ReadLine();
 
                 if (userChoice == "1") {
@@ -183,8 +183,23 @@ namespace TicketSystemSearch
                             taskFile.AddTicket(tasks);
                         }
                     } while (userOption == "1" || userOption == "2" || userOption == "3");
-                } 
-          } while (userChoice == "1" || userChoice == "2");
+                } else if (userChoice == "3") {
+                    string userInput;
+                    do {
+                        Console.WriteLine("What do you want to search on?");
+                        Console.WriteLine("1.) Status\n2.) Priority\n3.) Submitter\n4.) Exit");
+                        userInput = Console.ReadLine();
+
+                        if (userInput == "1") {
+                            Console.WriteLine("status");
+                        } else if (userInput == "2") {
+                            Console.WriteLine("Priority");
+                        } else if (userInput == "3") {
+                            Console.WriteLine("Submitter");
+                        }
+                    } while (userInput == "1" || userInput == "2" || userInput == "3");
+                }
+          } while (userChoice == "1" || userChoice == "2" || userChoice == "3");
 
             logger.Info("Program ended");
         }
