@@ -237,8 +237,30 @@ namespace TicketSystemSearch
 
                             int sum = Tickets.Count() + Tasks.Count() + Enhancements.Count();
                             Console.WriteLine("There are " + sum + " tickets with the priority of " + priority + ".\n");
+
                         } else if (userInput == "3") {
-                            Console.WriteLine("Submitter");
+                            //submitter
+
+                            Console.WriteLine("Enter submitter:");
+                            string submitter = Console.ReadLine();
+
+                            var Tickets = ticketFile.Systems.Where(s => s.submitter.Contains(submitter));
+                            foreach (System s in Tickets) {
+                                Console.WriteLine(s.Display());
+                            }
+
+                            var Tasks = taskFile.Tasks.Where(t => t.submitter.Contains(submitter));
+                            foreach (System s in Tasks) {
+                                Console.WriteLine(s.Display());
+                            }   
+
+                            var Enhancements = enhancementFile.Enhancements.Where(e => e.submitter.Contains(submitter));
+                            foreach (System s in Enhancements) {
+                                Console.WriteLine(s.Display());
+                            }
+
+                            int sum = Tickets.Count() + Tasks.Count() + Enhancements.Count();
+                            Console.WriteLine("There are " + sum + " tickets with the submitter of " + submitter + ".\n");
                         }
                     } while (userInput == "1" || userInput == "2" || userInput == "3");
                 }
