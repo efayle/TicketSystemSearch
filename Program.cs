@@ -196,17 +196,17 @@ namespace TicketSystemSearch
                             Console.WriteLine("Enter status:");
                             string status = Console.ReadLine();
 
-                            var Tickets = ticketFile.Systems.Where(s => s.status.Contains(status));
+                            var Tickets = ticketFile.Systems.Where(s => s.status.Contains(status, StringComparison.OrdinalIgnoreCase));
                             foreach (System s in Tickets) {
                                 Console.WriteLine(s.Display());
                             }
 
-                            var Tasks = taskFile.Tasks.Where(t => t.status.Contains(status));
+                            var Tasks = taskFile.Tasks.Where(t => t.status.Contains(status, StringComparison.OrdinalIgnoreCase));
                             foreach (System s in Tasks) {
                                 Console.WriteLine(s.Display());
                             }   
 
-                            var Enhancements = enhancementFile.Enhancements.Where(e => e.status.Contains(status));
+                            var Enhancements = enhancementFile.Enhancements.Where(e => e.status.Contains(status, StringComparison.OrdinalIgnoreCase));
                             foreach (System s in Enhancements) {
                                 Console.WriteLine(s.Display());
                             }
@@ -220,17 +220,17 @@ namespace TicketSystemSearch
                             Console.WriteLine("Enter priority:");
                             string priority = Console.ReadLine();
 
-                            var Tickets = ticketFile.Systems.Where(s => s.priority.Contains(priority));
+                            var Tickets = ticketFile.Systems.Where(s => s.priority.Contains(priority, StringComparison.OrdinalIgnoreCase));
                             foreach (System s in Tickets) {
                                 Console.WriteLine(s.Display());
                             }
 
-                            var Tasks = taskFile.Tasks.Where(t => t.priority.Contains(priority));
+                            var Tasks = taskFile.Tasks.Where(t => t.priority.Contains(priority, StringComparison.OrdinalIgnoreCase));
                             foreach (System s in Tasks) {
                                 Console.WriteLine(s.Display());
                             }   
 
-                            var Enhancements = enhancementFile.Enhancements.Where(e => e.priority.Contains(priority));
+                            var Enhancements = enhancementFile.Enhancements.Where(e => e.priority.Contains(priority, StringComparison.OrdinalIgnoreCase));
                             foreach (System s in Enhancements) {
                                 Console.WriteLine(s.Display());
                             }
@@ -244,17 +244,17 @@ namespace TicketSystemSearch
                             Console.WriteLine("Enter submitter:");
                             string submitter = Console.ReadLine();
 
-                            var Tickets = ticketFile.Systems.Where(s => s.submitter.Contains(submitter));
+                            var Tickets = ticketFile.Systems.Where(s => s.submitter.Contains(submitter, StringComparison.OrdinalIgnoreCase));
                             foreach (System s in Tickets) {
                                 Console.WriteLine(s.Display());
                             }
 
-                            var Tasks = taskFile.Tasks.Where(t => t.submitter.Contains(submitter));
+                            var Tasks = taskFile.Tasks.Where(t => t.submitter.Contains(submitter, StringComparison.OrdinalIgnoreCase));
                             foreach (System s in Tasks) {
                                 Console.WriteLine(s.Display());
                             }   
 
-                            var Enhancements = enhancementFile.Enhancements.Where(e => e.submitter.Contains(submitter));
+                            var Enhancements = enhancementFile.Enhancements.Where(e => e.submitter.Contains(submitter, StringComparison.OrdinalIgnoreCase));
                             foreach (System s in Enhancements) {
                                 Console.WriteLine(s.Display());
                             }
